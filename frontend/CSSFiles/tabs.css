@@ -1,0 +1,104 @@
+.pages-section{
+    background-color: white;
+    position: fixed;
+    top: 80px;
+    left: 250px;
+    right: 60px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+.page-text{
+    margin-right: 10px;
+    font-family: 'Roboto' Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+.prevpage-button{
+    padding-left: 8px;
+    padding-right: 0;
+    margin-left: 5px;
+    border: none;
+    background: none;
+}
+.prevpage-button span,
+.nextpage-button span{
+    font-size: 18px;
+}
+.pages-section .header-padding{
+    width: 5px;
+}
+.nextpage-button{
+    padding-left: 5px;
+    padding-right: 3px;
+    margin-right: 10px;
+    margin-right: 5px;
+    border: none;
+    background: none;
+}
+.tabs-section{
+    background-color: white;
+    position: fixed;
+    top: 132px;
+    left: 250px;
+    right: 60px;
+    height: 50px;
+}
+.tabs-section {
+    display: flex;
+    align-items: end;
+    border-bottom: 1px solid #ccc;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    cursor: pointer;
+    position: relative;
+    font-size: 14px;
+    color: #5f6368;
+    border-bottom: 3px solid transparent;
+    transition: border-bottom 0.2s ease, color 0.2s ease;
+}
+
+.tab:hover {
+    background-color: #f1f3f4;
+}
+
+.active-tab {
+    color: #d93025; /* Red */
+    font-weight: 500;
+    border-bottom: 3px solid #d93025;
+}
+
+.tab .material-symbols-outlined {
+    font-size: 20px;
+    margin-right: 8px;
+    color: inherit;
+}
+
+.tab-label {
+    margin-right: 8px;
+}
+
+.tab-badge {
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-weight: 500;
+    color: white;
+    white-space: nowrap;
+}
+
+.blue-badge {
+    background-color: #1a73e8;
+}
+
+.green-badge {
+    background-color: #188038;
+}

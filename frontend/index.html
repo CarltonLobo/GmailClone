@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Gmail Clone
+        </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+        <link rel="stylesheet" href="CSSFiles/general.css">
+        <link rel="stylesheet" href="CSSFiles/header.css">
+        <link rel="stylesheet" href="CSSFiles/sidebar.css">
+        <link rel="stylesheet" href="CSSFiles/styles.css">
+        <link rel="stylesheet" href="CSSFiles/tabs.css">
+    </head>
+    <body>
+        <div class="header">
+            <div class="header-left-section">
+                <button class="header-hamburger-button">
+                    <img class="header-hamburger-icon" src="icons/HeaderImages/Hamburger.svg" alt="Menu">
+                </button>
+                <div class="header-padding"></div>
+                <button class="header-gmail-button">
+                    <img class="header-gmail-icon" src="icons/HeaderImages/logo_gmail_lockup_default_1x_r5.png" alt="Gmail Logo">
+                </button>
+            </div>
+            <div class="header-search-bar">
+                <button class="search-button">
+                    <img class="search-icon" src="icons/HeaderImages/Search.svg">
+                </button>
+                <input class="search-field" type="text" placeholder="Search mail">
+                <button class="dropdown-button">
+                    <img class="search-icon" src="icons/HeaderImages/Dropdown Arrow.svg">
+                </button>
+            </div>
+            <div class="header-right-section">
+                <button class="help-button">
+                    <img class="help-icon" src="icons/HeaderImages/Help.svg">
+                </button>
+                <button class="settings-button">
+                    <img class="settings-icon" src="icons/HeaderImages/Settings.svg">
+                </button>
+                <button class="apps-button">
+                    <img class="apps-icon" src="icons/HeaderImages/Apps.svg">
+                </button>
+                <button class="account-button">
+                    <img class="account-img" src="icons/HeaderImages/Account-pfp.jpeg">
+                </button>
+            </div>
+        </div>
+        <div class="sidebar">
+            <button class="sidebar-compose-button">
+                <img class="compose-icon" src="icons/SidebarImages/Compose.svg">
+                <div class="compose-text">Compose</div>
+            </button>
+            <button class="sidebar-category-button">
+                <span class="material-symbols-outlined sidebar-category-icon">inbox</span>
+                <div class="sidebar-category-text">
+                    Inbox
+                </div>
+            </button>
+            <button class="sidebar-category-button">
+                <span class="material-symbols-outlined sidebar-category-icon">star</span>
+                <div class="sidebar-category-text">
+                    Starred
+                </div>
+            </button>
+            <button class="sidebar-category-button">
+                <span class="material-symbols-outlined sidebar-category-icon">schedule</span>
+                <div class="sidebar-category-text">
+                    Snoozed
+                </div>
+            </button>
+            <button class="sidebar-category-button">
+                <span class="material-symbols-outlined sidebar-category-icon">send</span>
+                <div class="sidebar-category-text">
+                    Sent
+                </div>
+            </button>
+            <button class="sidebar-category-button">
+                <span class="material-symbols-outlined sidebar-category-icon">draft</span>
+                <div class="sidebar-category-text">
+                    Drafts
+                </div>
+            </button>
+            <button class="sidebar-category-button">
+                <span class="material-symbols-outlined sidebar-category-icon">report</span>
+                <div class="sidebar-category-text">
+                    Spam
+                </div>
+            </button>
+            <button class="sidebar-category-button">
+                <span class="material-symbols-outlined sidebar-category-icon">delete</span>
+                <div class="sidebar-category-text">
+                    Trash
+                </div>
+            </button>
+            <button class="sidebar-category-button">
+                <span class="material-symbols-outlined sidebar-category-icon">label</span>
+                <div class="sidebar-category-text">
+                    Categories
+                </div>
+            </button>
+            <button class="sidebar-category-button">
+                <span class="material-symbols-outlined sidebar-category-icon">keyboard_arrow_down</span>
+                <div class="sidebar-category-text">
+                    More
+                </div>
+            </button>
+
+        </div>
+        <div class="main-section">
+            <div class="pages-section">
+                <span class="page-text">1-50 of 2,619</span>
+                <button class="prevpage-button"><span class="material-symbols-outlined">arrow_back_ios</span></button>
+                <div class="header-padding"></div>
+                <button class="nextpage-button"><span class="material-symbols-outlined">arrow_forward_ios</span></button>
+            </div>
+            <div class="tabs-section">
+                <div class="tab active-tab">
+                    <span class="material-symbols-outlined">group</span>
+                    <span class="tab-label">Primary</span>
+                </div>
+                <div class="tab">
+                    <span class="material-symbols-outlined">group</span>
+                    <span class="tab-label">Social</span>
+                    <span class="tab-badge blue-badge">1 new</span>
+                </div>
+                <div class="tab">
+                    <span class="material-symbols-outlined">sell</span>
+                    <span class="tab-label">Promotions</span>
+                    <span class="tab-badge green-badge">6 new</span>
+                </div>
+                <div class="tab">
+                    <span class="material-symbols-outlined">info</span>
+                    <span class="tab-label">Updates</span>
+                </div>
+            </div>
+            <div>
+                <div class="email-preview">
+                    <div class="email-left">
+                        <input type="checkbox">
+                        <span class="material-symbols-outlined">star</span>
+                        <span class="material-symbols-outlined">label</span>
+                        <span class="from-name">Leslie Alexander</span>
+                        <span class="subject">Hiya -</span>
+                        <span class="email-text">Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</span>
+                        <div class="email-hover">
+                            <button class="hover-button"><span class="material-symbols-outlined hover-icon">archive</span></button>
+                            <button class="hover-button"><span class="material-symbols-outlined hover-icon">delete</span></button>
+                            <button class="hover-button"><span class="material-symbols-outlined hover-icon">mark_as_unread</span></button>
+                            <button class="hover-button"><span class="material-symbols-outlined hover-icon">schedule</span></button>
+                        </div>
+                    </div>
+                    <div class="email-time">10:41 PM</div>
+                </div>
+                <div class="email-preview">
+                    <div class="email-left">
+                        <input type="checkbox">
+                        <span class="material-symbols-outlined">star</span>
+                        <span class="material-symbols-outlined">label</span>
+                        <span class="from-name">Darlene Robertson</span>
+                        <span class="subject">Welcome to our mailing list -</span>
+                        <span class="email-text">Irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit</span>
+                        <div class="email-hover">
+                            <button class="hover-button"><span class="material-symbols-outlined hover-icon">delete</span></button>
+                            <button class="hover-button"><span class="material-symbols-outlined hover-icon">archive</span></button>
+                            <button class="hover-button"><span class="material-symbols-outlined hover-icon">mark_as_unread</span></button>
+                            <button class="hover-button"><span class="material-symbols-outlined hover-icon">schedule</span></button>
+                        </div>
+                    </div>
+                    <div class="email-time">09:15 PM</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

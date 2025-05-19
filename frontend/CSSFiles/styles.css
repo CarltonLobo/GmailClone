@@ -1,0 +1,115 @@
+.main-section{
+    background-color: white;
+    height: 100%;
+    z-index: 1;
+    margin-right: 60px;
+}
+.email-preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Roboto', sans-serif;
+  padding: 10px 16px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: white;
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+
+.email-preview:hover {
+  background-color: #f2f6fc;
+}
+
+.email-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  overflow: hidden;
+  gap: 10px;
+}
+.email-left input{
+    cursor: pointer;
+    background-color: #e0e0e0;
+}
+.email-left input[type="checkbox"]:checked {
+    background-color: #5f6368;
+    border: 1px solid #5f6368;
+}
+
+.from-name,
+.subject {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.email-left .material-symbols-outlined{
+    font-size: 20px;
+    color: lightgray;
+    cursor: pointer;
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+.email-text {
+  font-weight: 400;
+  color: #5f6368;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+  min-width: 0;
+  transition: all 0.2s ease;
+}
+
+.email-hover {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.email-hover .hover-button .material-symbols-outlined{
+    margin-left: 4px;
+    margin-left: 4px;
+    color: white;
+}
+
+.email-time {
+  font-size: 12px;
+  color: #5f6368;
+  white-space: nowrap;
+  margin-left: 12px;
+  position: absolute;
+  right: 10px;
+  z-index: 0;
+}
+
+.email-preview:hover .email-time{
+    color: white;
+    z-index: -1;
+}
+.email-preview:hover .email-hover .hover-button .material-symbols-outlined{
+    color: #5f6368;
+}
+
+.email-actions {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  margin-left: 12px;
+}
+
+.email-preview:hover .email-actions {
+  display: flex;
+}
+
+.email-preview input[type="checkbox"],
+.email-preview .material-symbols-outlined {
+  flex-shrink: 0;
+}
+
+.hover-button{
+    background:none;
+    border: none;
+}
+
