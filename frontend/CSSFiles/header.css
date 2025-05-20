@@ -52,7 +52,7 @@
 }
 .header-search-bar {
     flex: 1;
-    background-color: lightgrey;
+    background-color: #F1F3F4;
     padding-top: 2px;
     padding-bottom: 2px;
     padding-left: 2px;
@@ -83,7 +83,7 @@
 }
 .search-field{
     border: none;
-    background-color: lightgrey;
+    background-color: #F1F3F4;
     width: 1fr;
     height: 38px;
     width: 100%;

@@ -10,11 +10,17 @@
     align-items: center;
     justify-content: right;
     border-bottom: 1px solid rgb(205, 205, 205);
+    z-index: 98;
+    transition: left 0.2s;
+}
+.pages-section.collapsed{
+    left: 0;
 }
 .page-text{
     margin-right: 10px;
-    font-family: 'Roboto' Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-size: 16px;
+    color: rgba(0, 0, 0, 0.54);
 }
 .prevpage-button{
     padding-left: 8px;
@@ -22,6 +28,7 @@
     margin-left: 5px;
     border: none;
     background: none;
+    color: rgba(0, 0, 0, 0.54);
 }
 .prevpage-button span,
 .nextpage-button span{
@@ -37,14 +44,20 @@
     margin-right: 5px;
     border: none;
     background: none;
+    color: rgba(0, 0, 0, 0.54);
 }
 .tabs-section{
     background-color: white;
     position: fixed;
-    top: 132px;
+    top: 131px;
     left: 250px;
     right: 60px;
     height: 50px;
+    z-index: 97;
+    transition: left 0.2s;
+}
+.tabs-section.collapsed{
+    left: 0;
 }
 .tabs-section {
     display: flex;
@@ -55,9 +68,13 @@
 }
 
 .tab {
+    position: relative;
     display: flex;
     align-items: center;
     padding: 10px 16px;
+    width: 200px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     cursor: pointer;
     position: relative;
     font-size: 14px;
@@ -71,9 +88,9 @@
 }
 
 .active-tab {
-    color: #d93025; /* Red */
+    color: #c84031; /* Red */
     font-weight: 500;
-    border-bottom: 3px solid #d93025;
+    border-bottom: 3px solid #c84031;
 }
 
 .tab .material-symbols-outlined {
@@ -91,14 +108,27 @@
     padding: 2px 6px;
     border-radius: 10px;
     font-weight: 500;
-    color: white;
+    color:rgba(0, 0, 0, 0);
     white-space: nowrap;
+    background:none;
 }
 
-.blue-badge {
+.primary-badge {
+    color: white;
+    background-color: #c84031;
+}
+
+.social-badge {
+    color: white;
     background-color: #1a73e8;
 }
 
-.green-badge {
+.promo-badge {
+    color: white;
     background-color: #188038;
+}
+
+.update-badge {
+    color: white;
+    background-color: #FB4C2F;
 }
