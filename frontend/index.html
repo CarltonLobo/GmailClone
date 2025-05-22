@@ -8,12 +8,13 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
         <link rel="stylesheet" href="CSSFiles/general.css">
         <link rel="stylesheet" href="CSSFiles/header.css">
         <link rel="stylesheet" href="CSSFiles/sidebar.css">
         <link rel="stylesheet" href="CSSFiles/styles.css">
         <link rel="stylesheet" href="CSSFiles/tabs.css">
+        <link rel="stylesheet" href="CSSFiles/CreateMail.css">
     </head>
     <body>
         <div class="header">
@@ -145,8 +146,8 @@
                 <div class="email-unseen">
                     <div class="email-left">
                         <input type="checkbox">
-                        <span class="material-symbols-outlined">star</span>
-                        <span class="material-symbols-outlined">label</span>
+                        <span class="material-symbols-rounded">star</span>
+                        <span class="material-symbols-rounded">label</span>
                         <span class="from-name">Carlton Lobo</span>
                     </div>
                     <div class="email-body">
@@ -156,10 +157,10 @@
                     </div>
                     <div class="email-right">
                         <div class="email-hover">
-                            <button class="hover-button"><span class="material-symbols-outlined hover-icon">archive</span></button>
-                            <button class="hover-button"><span class="material-symbols-outlined hover-icon">delete</span></button>
-                            <button class="hover-button"><span class="material-symbols-outlined hover-icon">mark_as_unread</span></button>
-                            <button class="hover-button"><span class="material-symbols-outlined hover-icon">schedule</span></button>
+                            <button class="hover-button archive-mail"><span class="material-symbols-outlined hover-icon">archive</span></button>
+                            <button class="hover-button delete-mail"><span class="material-symbols-outlined hover-icon">delete</span></button>
+                            <button class="hover-button unread-mail"><span class="material-symbols-outlined hover-icon">mark_as_unread</span></button>
+                            <button class="hover-button snooze-mail"><span class="material-symbols-outlined hover-icon">schedule</span></button>
                         </div>
                         <div class="email-time">10:41 PM</div>
                     </div>
@@ -167,6 +168,16 @@
                 </div>
             </div>
         </div>
+        <!-- <div class="compose-page">
+            <div class="compose-header"> 
+                <span>New Mail</span>
+                <button><span class="material-symbols-outlined">close</span></button>
+            </div>
+            <input type="email" placeholder="To" class="compose-to">
+            <input type="text" placeholder="Subject" class="compose-subject">
+            <textarea class="compose-body"></textarea>
+            <div class="compose-footer"> footer</div>
+        </div> -->
         <script src="script.js"></script>
     </body>
 </html>

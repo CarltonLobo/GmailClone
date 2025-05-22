@@ -52,13 +52,21 @@
 }
 
 .email-left input{
-  height: 20px;
-  width: 20px;
+  height: 18px;
+  width: 18px;
+  outline: none;
+  accent-color: rgba(0, 0, 0, 0.54);
   cursor: pointer;
 }
+
+.email-left .material-symbols-rounded,
 .email-left .material-symbols-outlined{
   cursor: pointer;
-  color: rgba(0, 0, 0, 0.54);
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.16);
+}
+.email-left .material-symbols-outlined{
+  color: #EFD494;
 }
 
 .email-body{
@@ -113,6 +121,7 @@
   white-space: nowrap;
   color: rgba(0, 0, 0, 0.54);
   font-weight: 400;
+  margin-left: 4px;
 }
 
 .email-right{
@@ -147,6 +156,7 @@
 
 .hover-button .material-symbols-outlined{
   font-size: 0;
+  cursor: pointer;
 }
 
 .email-time{
@@ -168,3 +178,12 @@
     border: none;
 }
 
+.email-id{
+  font-size: 0;
+}
+
+.left-button{
+  border: none;
+  background: none;
+  padding: 0;
+}

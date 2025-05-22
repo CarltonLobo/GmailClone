@@ -1,7 +1,11 @@
 const p_badge = document.querySelector(".primary-badge");
+p_badge.classList.remove('primary-badge');
 const s_badge = document.querySelector(".social-badge");
+s_badge.classList.remove('social-badge');
 const pbadge = document.querySelector(".promo-badge");
+pbadge.classList.remove('promo-badge');
 const u_badge = document.querySelector(".update-badge");
+u_badge.classList.remove('update-badge');
 let mailType;
 
 async function fetchMails() {
@@ -56,7 +60,7 @@ async function fetchMails() {
       pbadge.textContent = notif[2] + ' new';
       }
       u_badge.classList.remove('update-badge');
-      if(notif[0] != 0){
+      if(notif[3] != 0){
         u_badge.classList.add('update-badge');
         u_badge.textContent = notif[3] + ' new';
       }
@@ -74,9 +78,9 @@ async function fetchMails() {
           let m = "AM";
           let hour = date.getHours();
           let minute = String(date.getMinutes()).padStart(2, '0');
-          if(parseInt(date.getHours()>12)){
+          if(hour>12){
             m = "PM";
-            let hour = hour - 12;
+            hour = hour - 12;
           }
           time = hour+":"+minute+" "+m;
         }
@@ -93,60 +97,131 @@ async function fetchMails() {
           icon = "updates";
           type = "Updates";
         }
+        let strclass = 'rounded'
+        if(mail.starred){
+          strclass = 'outlined'
+        }
+
         emailElement.innerHTML = `
           <div class="email-left">
               <input type="checkbox">
-              <span class="material-symbols-outlined">star</span>
-              <span class="material-symbols-outlined">label</span>
+              <button class="left-button mail-star"><span class="material-symbols-${strclass}">star</span></button>
+              <button class="left-button"><span class="material-symbols-rounded">label</span></button>
               <span class="from-name">${mail.sender}</span>
           </div>
           <div class="email-body">
               <span class="email-tab-icon ${icon}-icon" id="email-tab-icon">${type}</span>
-              <span class="subject">${mail.subject || " "} </span>
+              <span class="subject">${mail.subject || " "} - </span>
               <span class="email-text">${mail.body}</span>
           </div>
           <div class="email-right">
               <div class="email-hover">
-                  <button class="hover-button"><span class="material-symbols-outlined hover-icon">archive</span></button>
-                  <button class="hover-button"><span class="material-symbols-outlined hover-icon">delete</span></button>
-                  <button class="hover-button"><span class="material-symbols-outlined hover-icon">mark_as_unread</span></button>
-                  <button class="hover-button"><span class="material-symbols-outlined hover-icon">schedule</span></button>
+                  <button class="hover-button archive-mail"><span class="material-symbols-outlined hover-icon">archive</span></button>
+                  <button class="hover-button delete-mail"><span class="material-symbols-outlined hover-icon">delete</span><div class="email-id">${mail._id}</div></button>
+                  <button class="hover-button unread-mail"><span class="material-symbols-outlined hover-icon">mark_as_unread</span></button>
+                  <button class="hover-button snooze-mail"><span class="material-symbols-outlined hover-icon">schedule</span></button>
               </div>
-              <div class="email-time">10:41 PM</div>
+              <div class="email-time">${time}</div>
           </div>
         `;
 
         mailContainer.appendChild(emailElement);
       }
     });
-
+    document.querySelectorAll('.email-unseen').forEach(mail =>{
+      const delbut = mail.querySelector('.delete-mail');
+      const id = delbut.querySelector(".email-id").textContent;
+      const strbut = mail.querySelector('.mail-star');
+      delbut.addEventListener('click', () =>{
+        delMail(id);
+      })
+      strbut.addEventListener('click', () =>{
+        star(id);
+      })
+      mail.addEventListener('click', ()=>{
+        readMail(id);
+      })
+    })
+    document.querySelectorAll('.email-seen').forEach(mail =>{
+      const delbut = mail.querySelector('.delete-mail');
+      const id = delbut.querySelector(".email-id").textContent;
+      const strbut = mail.querySelector('.mail-star');
+      const unseenButton = mail.querySelector('.unread-mail');
+      delbut.addEventListener('click', () =>{
+        delMail(id);
+      })
+      strbut.addEventListener('click', () =>{
+        star(id);
+      })
+      unseenButton.addEventListener('click', ()=>{
+        readMail(id);
+      })
+    })
+    
   } catch (error) {
     mailContainer.innerHTML = `<p>Error fetching mails: ${error.message}</p>`;
   }
 }
 
+async function delMail(id) {
+  try {
+    const response = await fetch(`http://localhost:8000/api/mail/delete/${id}`, {method:'DELETE'});
+    fetchMails(); 
+    if (response.ok) {
+      console.log("Successful Delete");
+    } else {
+      console.error("Failed to delete mail");
+    }
+  } catch (error) {
+    console.error("Error deleting mail:", error);
+  }
+}
+async function star(id) {
+  try{
+    const response = await fetch(`http://localhost:8000/api/mail/star/${id}`, {method:'PATCH'});
+    if (response.ok) {
+        console.log("Successfull star");
+      } else {
+        console.error("Failed to delete mail");
+      }
+    fetchMails();
+  }catch(error) {
+    console.error("Error deleting mail:", error);
+  }
+}
+async function readMail(id) {
+  try{
+    const response = await fetch(`http://localhost:8000/api/mail/read/${id}`, {method:'PATCH'});
+    if (response.ok) {
+        console.log("Successfull read");
+      } else {
+        console.error("Failed to delete mail");
+      }
+    fetchMails();
+  }catch(error) {
+    console.error("Error deleting mail:", error);
+  }
+}
+
 document.querySelectorAll('.tab').forEach(tab => {
   tab.addEventListener('click', () => {
-    // Remove active-tab from all
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active-tab'));
 
-    // Add active-tab to clicked tab
     tab.classList.add('active-tab');
 
-    // Re-fetch mails for the selected tab
     fetchMails();
   });
 });
-document.addEventListener("DOMContentLoaded", function () {
-  const hamburgerButton = document.querySelector(".header-hamburger-button");
-  const sidebar = document.getElementById("sidebar");
+document.querySelector('.header-gmail-button').addEventListener('click', ()=>{
+  fetchMails();
+  console.log("Reload Page");
+})
 
-  hamburgerButton.addEventListener("click", () => {
-    sidebar.classList.toggle("collapsed");
-    document.querySelector(".pages-section").classList.toggle("collapsed");
-    document.querySelector(".tabs-section").classList.toggle("collapsed");
-    document.querySelector(".main-section").classList.toggle("collapsed");
-  });
+document.querySelector(".header-hamburger-button").addEventListener("click", () => {
+  document.getElementById("sidebar").classList.toggle("collapsed");
+  document.querySelector(".pages-section").classList.toggle("collapsed");
+  document.querySelector(".tabs-section").classList.toggle("collapsed");
+  document.querySelector(".main-section").classList.toggle("collapsed");
 });
 
 fetchMails();

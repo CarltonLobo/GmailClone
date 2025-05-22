@@ -1,5 +1,5 @@
 import express from "express";
-import { createMail, getMails, starMail, deleteMail } from "./controller.js";
+import { createMail, getMails, starMail, deleteMail, markAsRead } from "./controller.js";
 
 const router = express.Router();
 
@@ -13,6 +13,9 @@ router.get("/getAll", getMails);
 router.delete("/delete/:id", deleteMail);
 
 // Route to mark a mail as starred
-router.get("/star", starMail);
+router.patch("/star/:id", starMail);
+
+//Route to read a mail
+router.patch("/read/:id", markAsRead);
 
 export default router;

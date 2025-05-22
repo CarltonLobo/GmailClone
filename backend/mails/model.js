@@ -8,6 +8,7 @@ const MailSchema = new mongoose.Schema({
   reciever: {
     type: String,
     required: true,
+    default: "you@gmail.com",
   },
   type: {
     type: String,
@@ -24,7 +25,7 @@ const MailSchema = new mongoose.Schema({
   status: {
     type: String,
     enum: ["seen", "unseen"],
-    default: "seen",
+    default: "unseen",
   },
   starred: {
     type: Boolean,
@@ -36,4 +37,5 @@ const MailSchema = new mongoose.Schema({
   },
 });
 
-export default mongoose.model("Mail", MailSchema);
+const Mail = mongoose.model("Mail", MailSchema)
+export default Mail;

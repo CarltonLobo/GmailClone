@@ -1,0 +1,86 @@
+.compose-page{
+    background-color: white;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    right: 100px;
+    width: 700px;
+    bottom: 0;
+    height: 500px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+}
+
+.compose-header{
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    background-color: rgba(0, 0, 0, 0.284);
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    height: 40px;
+}
+.compose-header span{
+    margin-left: 15px;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+.compose-header button{
+    margin-right: 15px;
+    margin-bottom: 5px;
+    border: none;
+    background: none;
+}
+
+.compose-to{
+    border: none;
+    background: none;
+    width: 670px;
+    height: 40px;
+    padding-left: 15px ;
+    padding-right: 15px;
+    border-bottom: rgba(0, 0, 0, 0.54) solid 1px;
+}
+.compose-to:focus{
+    outline: none;
+    background-color: white;
+    box-shadow: 0 2 2 2px #000000;
+}
+.compose-subject{
+    border: none;
+    background: none;
+    width: 670px;
+    height: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-bottom: rgba(0, 0, 0, 0.54) solid 1px;
+    overflow:hidden;
+}
+.compose-subject:focus{
+    outline: none;
+    background-color: white;
+    box-shadow: 0 2 2 2px #000000;
+}
+.compose-body{
+    border: none;
+    background: none;
+    width: 683px;
+    flex: 1;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 300px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+.compose-body:focus{
+    outline: none;
+    background-color: white;
+    box-shadow: 0 2 2 2px #000000;
+}
+.compose-footer{
+    background-color: lightcoral;
+    height: 40px;
+}
